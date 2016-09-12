@@ -33,14 +33,14 @@
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/avatar"
             android:layout_marginLeft="10dp"
-            android:textSize="20sp" />
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextClock
             android:id="@+id/textClock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:textSize="20sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_toStartOf="@+id/apps_button"/>
 
         <Button
