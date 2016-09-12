@@ -1,10 +1,14 @@
 package com.example.elderly.simplelauncher;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.content.ComponentName;
+import android.widget.Button;
+
 
 public class HomeActivity extends Activity {
 
@@ -23,8 +27,24 @@ public class HomeActivity extends Activity {
         startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
     }
 
+    public void popupWindow(View v) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        LayoutInflater inflater = ((Activity) this).getLayoutInflater();
+        View alertView = inflater.inflate(R.layout.activity_popup, null);
+        alertDialog.setView(alertView);
+        final AlertDialog show = alertDialog.show();
 
-    public void showCalendar(View v) {
-        
+        Button btnOK = (Button) alertView.findViewById(R.id.btnOK);
+        btnOK.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                show.dismiss();
+            }
+        });
     }
+
+
+
 }
