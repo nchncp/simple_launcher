@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#fff"
+    android:background="#000"
     android:weightSum="5">
 
     <LinearLayout
@@ -16,7 +16,6 @@
             android:text="Title: Hey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000"
             android:textSize="40sp" />
 
     </LinearLayout>

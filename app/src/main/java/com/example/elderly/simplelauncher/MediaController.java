@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MediaController {
 
     private final String TAG = "MediaController";
-    private final static String strURL = "http://www.argong.com/TVAppController/get_media.php";
+    private final static String strURL = "http://www.argong.com/LauncherController/get_media.php";
     private String strURLParams;
     private Context myContext;
     public ArrayList<String> listNumber;

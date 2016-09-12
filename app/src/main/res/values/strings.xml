@@ -7,4 +7,7 @@
     <string name="name">Nicha</string>
     <string name="ok">OK</string>
     <string name="content">lkhdfkegfjgdsjfgdskfgjsdgfjdsgvjdhgjfgdfjvdhbdgljrdfjhvdfjxvbh,j</string>
+    <string name="smsbox">Messages Box</string>
+    <string name="sms_title">Title</string>
+    <string name="sms_detail">asdfghjkl;asdfghjkl;</string>
 </resources>
