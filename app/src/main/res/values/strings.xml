@@ -11,4 +11,6 @@
     <string name="sms_title">Title</string>
     <string name="sms_detail">asdfghjkl;asdfghjkl;</string>
     <string name="galleryBox">GALLERY</string>
+    <string name="login">LOG IN</string>
+    <string name="contactBox">CONTACTS</string>
 </resources>

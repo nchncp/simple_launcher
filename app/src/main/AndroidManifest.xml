@@ -24,6 +24,9 @@
         <activity
             android:name=".AppsListActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <uses-permission android:name="android.permission.INTERNET" />
+
     </application>
 
 </manifest>

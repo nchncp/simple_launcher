@@ -28,8 +28,6 @@ public class HomeActivity extends Activity {
         strEmail = pref.getString("email", "nchncp@gmail.com");
         //***** END SharedPreferences *****
 
-
-
     }
 
     public void showApps(View v) {
@@ -37,12 +35,13 @@ public class HomeActivity extends Activity {
         startActivity(i);
     }
 
-    public void showSettings(View v) {
-        startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
+    public void showMessages(View v) {
+        Intent i = new Intent(getApplicationContext(), MessagesActivity.class);
+        startActivity(i);
     }
 
-    public void showMessages(View v) {
-
+    public void showSettings(View v) {
+        startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
     }
 
     public void popupWindow(View v) {

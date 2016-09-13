@@ -113,6 +113,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/gallery"
+                    android:onClick="showMessages"
                     android:layout_marginLeft="5dp"/>
 
             </LinearLayout>
