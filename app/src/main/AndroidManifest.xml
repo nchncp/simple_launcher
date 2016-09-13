@@ -25,6 +25,18 @@
             android:name=".AppsListActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
+        <activity
+            android:name=".MessagesActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name=".GalleryActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name=".ContactsActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
         <uses-permission android:name="android.permission.INTERNET" />
 
     </application>

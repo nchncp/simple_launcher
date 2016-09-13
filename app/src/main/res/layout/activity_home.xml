@@ -113,7 +113,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/gallery"
-                    android:onClick="showMessages"
+                    android:onClick="showGallery"
                     android:layout_marginLeft="5dp"/>
 
             </LinearLayout>
@@ -137,7 +137,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/contacts"
                 android:layout_marginRight="5dp"
-                android:onClick="popupWindow"/>
+                android:onClick="showContacts"/>
 
             <FrameLayout
                 android:id="@+id/calendarShortcut"
@@ -154,7 +154,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/notifications"
-                android:onClick="showCalendar"
+                android:onClick="popupWindow"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"/>
 

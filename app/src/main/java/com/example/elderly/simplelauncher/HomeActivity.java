@@ -12,22 +12,10 @@ import android.widget.Button;
 
 public class HomeActivity extends Activity {
 
-    private String strFullname;
-    private String strUserPhoto;
-    private String strEmail;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        //***** START SharedPreferences *****
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-        strFullname = pref.getString("fullname", "Nichapa P");
-        strUserPhoto = pref.getString("photo", "http://www.argong.com/image-users/nichapa.jpg");
-        strEmail = pref.getString("email", "nchncp@gmail.com");
-        //***** END SharedPreferences *****
-
     }
 
     public void showApps(View v) {
@@ -36,7 +24,17 @@ public class HomeActivity extends Activity {
     }
 
     public void showMessages(View v) {
-        Intent i = new Intent(getApplicationContext(), MessagesActivity.class);
+        Intent i = new Intent(this, MessagesActivity.class);
+        startActivity(i);
+    }
+
+    public void showGallery(View v) {
+        Intent i = new Intent(this, GalleryActivity.class);
+        startActivity(i);
+    }
+
+    public void showContacts(View v) {
+        Intent i = new Intent(this, ContactsActivity.class);
         startActivity(i);
     }
 
