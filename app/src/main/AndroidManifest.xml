@@ -8,6 +8,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Wallpaper.NoTitleBar.Fullscreen">
+
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
         <activity
             android:name=".HomeActivity"
             android:label="Simple Launcher Home"
@@ -37,7 +42,9 @@
             android:name=".ContactsActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
-        <uses-permission android:name="android.permission.INTERNET" />
+        <activity
+            android:name=".MessagesUnread"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
     </application>
 
