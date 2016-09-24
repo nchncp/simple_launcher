@@ -236,6 +236,11 @@ public class HomeActivity extends Activity {
         startActivity(i);
     }
 
+    public void showTV(View v) {
+        Intent i = new Intent(this, TVActivity.class);
+        startActivity(i);
+    }
+
     public void showSettings(View v) {
         startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
     }
