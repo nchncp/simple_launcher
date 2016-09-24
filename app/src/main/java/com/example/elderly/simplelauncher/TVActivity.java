@@ -17,7 +17,7 @@ public class TVActivity extends Activity {
 
         WebView WebViw = (WebView) findViewById(R.id.tvView);
         WebViw.getSettings().setJavaScriptEnabled(true);
-        WebViw.loadUrl("http://www.yimhd.com/tv_online/one-hd.php");
+        WebViw.loadUrl("http://dlab.sit.kmutt.ac.th/el_launcher/tv/1.html");
 
     }
 
