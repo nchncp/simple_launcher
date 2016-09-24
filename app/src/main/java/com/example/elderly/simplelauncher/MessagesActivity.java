@@ -22,5 +22,9 @@ public class MessagesActivity extends Activity {
         startActivity(i);
     }
 
+    public void showReadMessages(View v) {
+        Intent i = new Intent(this, MessagesRead.class);
+        startActivity(i);
+    }
 
 }

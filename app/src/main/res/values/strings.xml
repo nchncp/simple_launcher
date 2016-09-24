@@ -8,6 +8,8 @@
     <string name="ok">OK</string>
     <string name="content">lkhdfkegfjgdsjfgdskfgjsdgfjdsgvjdhgjfgdfjvdhbdgljrdfjhvdfjxvbh,j</string>
     <string name="smsbox">MESSAGES</string>
+    <string name="sms_unread">UNREAD MESSAGES</string>
+    <string name="sms_read">READ MESSAGES</string>
     <string name="sms_title">Title</string>
     <string name="sms_detail">asdfghjkl;asdfghjkl;</string>
     <string name="galleryBox">GALLERY</string>

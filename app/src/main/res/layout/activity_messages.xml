@@ -47,7 +47,7 @@
 
             <FrameLayout
                 android:id="@+id/readShortcut"
-
+                android:onClick="showReadMessages"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

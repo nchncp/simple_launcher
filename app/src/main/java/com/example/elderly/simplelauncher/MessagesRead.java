@@ -1,45 +1,43 @@
 package com.example.elderly.simplelauncher;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.http.GET;
 import retrofit2.Retrofit;
-import retrofit2.http.Path;
 import retrofit2.converter.gson.GsonConverterFactory;
-import java.util.List;
+import retrofit2.http.GET;
 
 /**
- * Created by nicha on 9/15/16.
+ * Created by nicha on 9/16/16.
  */
-public class MessagesUnread extends Activity {
+public class MessagesRead extends Activity {
     private ListView jsonListview;
-    private ArrayList<String> exData;
-    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.messages_unread);
+        setContentView(R.layout.messages_read);
     }
 
     public interface APIService {
-//        @GET("stayintouch/WebApplication/examples/web/json/readMessage.php?accountid={accountid}")
-//        Call<List<MessagesModel>> getMessage(@Path("accountid") String accountid);
-        @GET("stayintouch/WebApplication/examples/web/json/unreadMessage.php?accountid=54270371")
+//      @GET("stayintouch/WebApplication/examples/web/json/readMessage.php?accountid={accountid}")
+//      Call<List<MessagesModel>> getMessage(@Path("accountid") String accountid);
+        @GET("stayintouch/WebApplication/examples/web/json/readMessage.php?accountid=54270371")
         Call<List<MessagesModel>> getMessage();
     }
 
     public void buttonClick(View v) {
-        jsonListview = (ListView) findViewById(R.id.listUnreadMessages);
+        jsonListview = (ListView) findViewById(R.id.listReadMessages);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://dlab.sit.kmutt.ac.th/")
@@ -54,8 +52,9 @@ public class MessagesUnread extends Activity {
                 ArrayList<String> exData = new ArrayList<String>();
                 for(MessagesModel obj: response.body()) {
                     exData.add(obj.getTopic());
+                    exData.add(obj.getMessage());
                 }
-                ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MessagesUnread.this, android.R.layout.simple_list_item_1, android.R.id.text1, exData);
+                ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MessagesRead.this, android.R.layout.simple_list_item_1, android.R.id.text1, exData);
                 jsonListview.setAdapter(myAdapter);
             }
 
@@ -67,4 +66,3 @@ public class MessagesUnread extends Activity {
 
     }
 }
-
