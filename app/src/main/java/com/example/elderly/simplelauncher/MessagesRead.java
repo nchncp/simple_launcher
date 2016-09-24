@@ -32,7 +32,7 @@ public class MessagesRead extends Activity {
     public interface APIService {
 //      @GET("stayintouch/WebApplication/examples/web/json/readMessage.php?accountid={accountid}")
 //      Call<List<MessagesModel>> getMessage(@Path("accountid") String accountid);
-        @GET("el_launcher/unreadMessages.php?accountid=54270371")
+        @GET("el_launcher/readMessages.php?accountid=54270371")
         Call<List<MessagesModel>> getMessage();
     }
 
