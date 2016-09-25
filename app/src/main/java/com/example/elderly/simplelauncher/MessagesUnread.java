@@ -2,7 +2,10 @@ package com.example.elderly.simplelauncher;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -15,6 +18,8 @@ import retrofit2.http.GET;
 import retrofit2.Retrofit;
 import retrofit2.http.Path;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Query;
+
 import java.util.List;
 
 /**
@@ -34,11 +39,14 @@ public class MessagesUnread extends Activity {
     public interface APIService {
 //        @GET("stayintouch/WebApplication/examples/web/json/readMessage.php?accountid={accountid}")
 //        Call<List<MessagesModel>> getMessage(@Path("accountid") String accountid);
-        @GET("el_launcher/unreadMessages.php?accountid=54270371")
-        Call<List<MessagesModel>> getMessage();
+        @GET("el_launcher/unreadMessages.php")
+        Call<List<MessagesModel>> getMessage(@Query("accountid") String accountID);
     }
 
-    public void buttonClick(View v) {
+    @Override
+    protected void onResume() {
+        super.onResume();
+
         jsonListview = (ListView) findViewById(R.id.listUnreadMessages);
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -46,8 +54,11 @@ public class MessagesUnread extends Activity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+        SharedPreferences sharedPreferences = getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
+        final String AccountID = sharedPreferences.getString("AccountID", "");
+
         APIService service = retrofit.create(APIService.class);
-        Call<List<MessagesModel>> call = service.getMessage();
+        Call<List<MessagesModel>> call = service.getMessage(AccountID);
         call.enqueue(new Callback<List<MessagesModel>>() {
             @Override
             public void onResponse(Call<List<MessagesModel>> call, Response<List<MessagesModel>> response) {
@@ -55,6 +66,7 @@ public class MessagesUnread extends Activity {
                 for(MessagesModel obj: response.body()) {
                     exData.add(obj.getTopic());
                 }
+                Log.d("string", response.body().toString());
                 ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MessagesUnread.this, android.R.layout.simple_list_item_1, android.R.id.text1, exData);
                 jsonListview.setAdapter(myAdapter);
             }
@@ -64,7 +76,7 @@ public class MessagesUnread extends Activity {
                 System.out.println(t.getMessage());
             }
         });
-
     }
+
 }
 
