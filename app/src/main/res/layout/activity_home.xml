@@ -27,21 +27,32 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/circle"
-                android:layout_alignParentBottom="true" />
+                android:layout_alignParentBottom="true"
+                android:onClick="showLogin"/>
 
             <TextView
-                android:id="@+id/nameLastname"
+                android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name Lastname"
+                android:text="FName"
                 android:layout_alignParentBottom="true"
                 android:layout_toEndOf="@+id/avatar"
                 android:layout_marginLeft="10dp"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
+            <TextView
+                android:id="@+id/txtLast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LName"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/txtName"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
             <Button
                 android:id="@+id/btnPopup"
-                android:layout_toRightOf="@+id/nameLastname"
+                android:layout_toRightOf="@+id/txtLast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Show Popup"/>

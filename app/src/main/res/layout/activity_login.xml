@@ -24,7 +24,7 @@
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:textAlignment="center"
-            android:textSize="40sp" />
+             />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,8 +34,9 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/family" />
+                android:layout_height="110dp"
+                android:background="@drawable/family"
+                />
 
         </LinearLayout>
 
@@ -46,6 +47,7 @@
             android:weightSum="1">
 
             <EditText
+                android:id="@+id/txtUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -55,6 +57,7 @@
                 android:text="Username"/>
 
             <EditText
+                android:id="@+id/txtPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -64,11 +67,12 @@
                 android:text="Password" />
 
             <Button
+                android:id="@+id/btnLogin"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
-                android:text="Enter" />
+                android:text="Login" />
 
         </LinearLayout>
 

@@ -19,9 +19,17 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.StatusLine;
+import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +47,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.security.PrivateKey;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeActivity extends Activity {
@@ -65,69 +74,108 @@ public class HomeActivity extends Activity {
 
         popupWindow();
 
-        notiData = new ArrayList<String>();
+//        notiData = new ArrayList<String>();
+//
+//        new AsyncTask<Void, Void, Void>() {
+//
+//            @Override
+//            protected Void doInBackground(Void... voids) {
+//
+//                try {
+//                    URL url = new URL("http://dlab.sit.kmutt.ac.th/el_launcher/unreadMessages.php");
+//
+//                    HttpClient client = new DefaultHttpClient();
+//                    HttpGet request = new HttpGet();
+//                    request.setURI(new URI(""));
+//
+//                    URLConnection urlConnection = url.openConnection();
+//
+//                    HttpURLConnection httpURLConnection = (HttpURLConnection)urlConnection;
+//                    httpURLConnection.setRequestMethod("GET");
+//                    httpURLConnection.connect();
+//
+//                    InputStream inputStream = null;
+//
+//                    if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
+//                        inputStream = httpURLConnection.getInputStream();
+//
+//                    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"), 8);
+//
+//                    StringBuilder stringBuilder = new StringBuilder();
+//                    String line = null;
+//
+//                    while ((line=reader.readLine()) != null) {
+//                        stringBuilder.append(line + "\n");
+//                    }
+//                    inputStream.close();
+//                    Log.d("JSON Result", stringBuilder.toString());
+//
+//                    JSONObject jsonObject = new JSONObject(stringBuilder.toString());
+//                    JSONArray exArray = jsonObject.getJSONArray("result");
+//
+//                    for (int i=0; i < exArray.length(); i++) {
+//                        JSONObject jsonObj = exArray.getJSONObject(i);
+//                        notiData.add(jsonObj.getString("Topic"));
+//                        notiData.add(jsonObj.getString("Message"));
+//                    }
+//
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                } catch (URISyntaxException e) {
+//                    e.printStackTrace();
+//                } catch (ProtocolException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                return null;
+//            }
+//        }.execute();
+//
+////        notiTopic.setText(notiData.get(2).toString());
+////        notiDetail.setText(notiData.get(3).toString());
 
-        new AsyncTask<Void, Void, Void>() {
+    }
 
-            @Override
-            protected Void doInBackground(Void... voids) {
+    @Override
+    protected void onResume() {
+        super.onResume();
 
-                try {
-                    URL url = new URL("http://dlab.sit.kmutt.ac.th/el_launcher/unreadMessages.php");
+        showInfo();
 
-                    HttpClient client = new DefaultHttpClient();
-                    HttpGet request = new HttpGet();
-                    request.setURI(new URI(""));
+    }
 
-                    URLConnection urlConnection = url.openConnection();
+    public void showInfo() {
+        final TextView tFName = (TextView)findViewById(R.id.txtName);
+        final TextView tLName = (TextView)findViewById(R.id.txtLast);
 
-                    HttpURLConnection httpURLConnection = (HttpURLConnection)urlConnection;
-                    httpURLConnection.setRequestMethod("GET");
-                    httpURLConnection.connect();
+//        String url = "http://dlab.sit.kmutt.ac.th/el_launcher/getByAccountID.php";
 
-                    InputStream inputStream = null;
+        Intent intent= getIntent();
+//        final String AccountID = intent.getStringExtra("AccountID");
 
-                    if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
-                        inputStream = httpURLConnection.getInputStream();
+        SharedPreferences sharedPreferences = getSharedPreferences("PREF_NAME", Context.MODE_PRIVATE);
+        final String AccountID = sharedPreferences.getString("AccountID", "");
+        final String FName = sharedPreferences.getString("FName", "");
+        final String LName = sharedPreferences.getString("LName", "");
 
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"), 8);
+        if("".equals(AccountID)) {
+            return;
+        }
 
-                    StringBuilder stringBuilder = new StringBuilder();
-                    String line = null;
+        if(!AccountID.equals("")) {
+            tFName.setText(FName);
+            tLName.setText(LName);
+        }
+        else {
+            tFName.setText("-");
+            tLName.setText("-");
+        }
 
-                    while ((line=reader.readLine()) != null) {
-                        stringBuilder.append(line + "\n");
-                    }
-                    inputStream.close();
-                    Log.d("JSON Result", stringBuilder.toString());
 
-                    JSONObject jsonObject = new JSONObject(stringBuilder.toString());
-                    JSONArray exArray = jsonObject.getJSONArray("result");
-
-                    for (int i=0; i < exArray.length(); i++) {
-                        JSONObject jsonObj = exArray.getJSONObject(i);
-                        notiData.add(jsonObj.getString("Topic"));
-                        notiData.add(jsonObj.getString("Message"));
-                    }
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (URISyntaxException e) {
-                    e.printStackTrace();
-                } catch (ProtocolException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                return null;
-            }
-        }.execute();
-
-//        notiTopic.setText(notiData.get(2).toString());
-//        notiDetail.setText(notiData.get(3).toString());
 
     }
 
@@ -153,20 +201,6 @@ public class HomeActivity extends Activity {
                 // Inflate the custom layout/view
                 View customView = inflater.inflate(R.layout.notification,null);
 
-                /*
-                    public PopupWindow (View contentView, int width, int height)
-                        Create a new non focusable popup window which can display the contentView.
-                        The dimension of the window must be passed to this constructor.
-
-                        The popup does not provide any background. This should be handled by
-                        the content view.
-
-                    Parameters
-                        contentView : the popup's content
-                        width : the popup's width
-                        height : the popup's height
-                */
-                // Initialize a new instance of popup window
                 mPopupWindow = new PopupWindow(
                         customView,
                         LayoutParams.WRAP_CONTENT,
@@ -209,6 +243,11 @@ public class HomeActivity extends Activity {
                 mPopupWindow.showAtLocation(mRelativeLayout, Gravity.CENTER,0,0);
             }
         });
+    }
+
+    public void showLogin(View v) {
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
     }
 
     public void showApps(View v) {
