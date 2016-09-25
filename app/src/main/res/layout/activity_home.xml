@@ -26,7 +26,7 @@
                 android:id="@+id/avatar"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/circle"
+                android:background="@drawable/grandpa"
                 android:layout_alignParentBottom="true"
                 android:onClick="showLogin"/>
 
@@ -34,7 +34,7 @@
                 android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FName"
+                android:hint="@string/fname"
                 android:layout_alignParentBottom="true"
                 android:layout_toEndOf="@+id/avatar"
                 android:layout_marginLeft="10dp"
@@ -44,7 +44,7 @@
                 android:id="@+id/txtLast"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LName"
+                android:hint="@string/lname"
                 android:layout_alignParentBottom="true"
                 android:layout_toEndOf="@+id/txtName"
                 android:layout_marginLeft="10dp"
@@ -53,9 +53,11 @@
             <Button
                 android:id="@+id/btnPopup"
                 android:layout_toRightOf="@+id/txtLast"
+                android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Show Popup"/>
+                android:text="@string/popup"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
 
             <TextClock
                 android:id="@+id/textClock"
@@ -63,17 +65,17 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_toStartOf="@+id/apps_button"/>
+                android:layout_toStartOf="@+id/all_apps"/>
 
-            <Button
-                android:id="@+id/apps_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+            <ImageView
+                android:id="@+id/all_apps"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/search"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:text="@string/apps"
-                android:onClick="showApps"
-                android:textSize="10dp" />
+                android:layout_centerHorizontal="true"
+                android:onClick="showApps"/>
 
         </RelativeLayout>
 

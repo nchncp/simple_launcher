@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#374045"
     android:gravity="center"
-    android:background="#374045">
+    android:orientation="horizontal">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="70dp"
-        android:background="#cdcdcd"
-        android:orientation="vertical">
+        android:background="#cdcdcd">
 
         <TextView
+            android:id="@+id/loginHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#212121"
-            android:text="@string/login"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
+            android:layout_alignParentTop="true"
             android:gravity="center"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
+            android:text="@string/login"
             android:textAlignment="center"
-             />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#212121"
+            android:textStyle="bold" />
 
         <LinearLayout
+            android:layout_below="@+id/loginHome"
+            android:layout_above="@+id/loginForm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:weightSum="3">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
-                android:background="@drawable/family"
-                />
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/family"/>
+
+            <FrameLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/loginForm"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:gravity="center"
             android:weightSum="1">
 
@@ -50,32 +64,30 @@
                 android:id="@+id/txtUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
                 android:layout_weight="0.2"
                 android:gravity="center"
-                android:textColor="#212121"
-                android:text="Username"/>
+                android:hint="@string/username"
+                android:textColor="#212121" />
 
             <EditText
                 android:id="@+id/txtPassword"
+                android:inputType="textPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
                 android:layout_weight="0.2"
                 android:gravity="center"
-                android:textColor="#212121"
-                android:text="Password" />
+                android:hint="@string/password"
+                android:textColor="#212121" />
 
             <Button
                 android:id="@+id/btnLogin"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:layout_gravity="center"
                 android:text="Login" />
 
         </LinearLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
