@@ -191,6 +191,11 @@ public class HomeActivity extends Activity {
         startActivity(i);
     }
 
+    public void showTV(View v) {
+        Intent i = new Intent(this, LiveActivity.class);
+        startActivity(i);
+    }
+
     public void showMessages(View v) {
         Intent i = new Intent(this, MessagesActivity.class);
         startActivity(i);
@@ -208,11 +213,6 @@ public class HomeActivity extends Activity {
 
     public void showCalendar(View v) {
         Intent i = new Intent(this, CalendarActivity.class);
-        startActivity(i);
-    }
-
-    public void showTV(View v) {
-        Intent i = new Intent(this, TVActivity.class);
         startActivity(i);
     }
 
