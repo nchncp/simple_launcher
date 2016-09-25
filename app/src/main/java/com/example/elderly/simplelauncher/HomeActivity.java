@@ -74,70 +74,6 @@ public class HomeActivity extends Activity {
 
         popupWindow();
 
-//        notiData = new ArrayList<String>();
-//
-//        new AsyncTask<Void, Void, Void>() {
-//
-//            @Override
-//            protected Void doInBackground(Void... voids) {
-//
-//                try {
-//                    URL url = new URL("http://dlab.sit.kmutt.ac.th/el_launcher/unreadMessages.php");
-//
-//                    HttpClient client = new DefaultHttpClient();
-//                    HttpGet request = new HttpGet();
-//                    request.setURI(new URI(""));
-//
-//                    URLConnection urlConnection = url.openConnection();
-//
-//                    HttpURLConnection httpURLConnection = (HttpURLConnection)urlConnection;
-//                    httpURLConnection.setRequestMethod("GET");
-//                    httpURLConnection.connect();
-//
-//                    InputStream inputStream = null;
-//
-//                    if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK)
-//                        inputStream = httpURLConnection.getInputStream();
-//
-//                    BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"), 8);
-//
-//                    StringBuilder stringBuilder = new StringBuilder();
-//                    String line = null;
-//
-//                    while ((line=reader.readLine()) != null) {
-//                        stringBuilder.append(line + "\n");
-//                    }
-//                    inputStream.close();
-//                    Log.d("JSON Result", stringBuilder.toString());
-//
-//                    JSONObject jsonObject = new JSONObject(stringBuilder.toString());
-//                    JSONArray exArray = jsonObject.getJSONArray("result");
-//
-//                    for (int i=0; i < exArray.length(); i++) {
-//                        JSONObject jsonObj = exArray.getJSONObject(i);
-//                        notiData.add(jsonObj.getString("Topic"));
-//                        notiData.add(jsonObj.getString("Message"));
-//                    }
-//
-//                } catch (MalformedURLException e) {
-//                    e.printStackTrace();
-//                } catch (URISyntaxException e) {
-//                    e.printStackTrace();
-//                } catch (ProtocolException e) {
-//                    e.printStackTrace();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//
-//                return null;
-//            }
-//        }.execute();
-//
-////        notiTopic.setText(notiData.get(2).toString());
-////        notiDetail.setText(notiData.get(3).toString());
-
     }
 
     @Override
@@ -284,22 +220,5 @@ public class HomeActivity extends Activity {
         startActivityForResult(new Intent(android.provider.Settings.ACTION_SETTINGS), 0);
     }
 
-    public void popupWindow(View v) {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-        LayoutInflater inflater = ((Activity) this).getLayoutInflater();
-        View alertView = inflater.inflate(R.layout.activity_popup, null);
-        alertDialog.setView(alertView);
-        final AlertDialog show = alertDialog.show();
-
-        Button btnOK = (Button) alertView.findViewById(R.id.btnOK);
-        btnOK.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                show.dismiss();
-            }
-        });
-    }
 
 }
