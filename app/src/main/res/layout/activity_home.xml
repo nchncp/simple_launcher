@@ -38,7 +38,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_toEndOf="@+id/avatar"
                 android:layout_marginLeft="10dp"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40sp"/>
 
             <TextView
                 android:id="@+id/txtLast"
@@ -48,23 +49,26 @@
                 android:layout_alignParentBottom="true"
                 android:layout_toEndOf="@+id/txtName"
                 android:layout_marginLeft="10dp"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40sp"/>
 
-            <Button
-                android:id="@+id/btnPopup"
-                android:layout_toRightOf="@+id/txtLast"
-                android:layout_marginLeft="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/popup"
-                android:textAppearance="?android:attr/textAppearanceSmall"/>
+            <!--<Button-->
+                <!--android:id="@+id/btnPopup"-->
+                <!--android:layout_toRightOf="@+id/txtLast"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/popup"-->
+                <!--android:textAppearance="?android:attr/textAppearanceSmall"/>-->
 
             <TextClock
                 android:id="@+id/textClock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40sp"
                 android:layout_toStartOf="@+id/all_apps"/>
 
             <ImageView
