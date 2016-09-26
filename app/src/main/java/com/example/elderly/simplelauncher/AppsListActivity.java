@@ -50,14 +50,14 @@ public class AppsListActivity extends Activity {
     private void loadListView() {
         list = (ListView) findViewById(R.id.apps_list);
 
-        ArrayAdapter<AppInfo> adapter = new ArrayAdapter<AppInfo>(this, R.layout.list_item, apps) {
+        ArrayAdapter<AppInfo> adapter = new ArrayAdapter<AppInfo>(this, R.layout.applist_item, apps) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
 
                 ViewHolderItem viewHolder = null;
 
                 if (convertView == null) {
-                    convertView = getLayoutInflater().inflate(R.layout.list_item, parent, false);
+                    convertView = getLayoutInflater().inflate(R.layout.applist_item, parent, false);
                     viewHolder = new ViewHolderItem();
                     viewHolder.icon = (ImageView) convertView.findViewById(R.id.icon);
                     viewHolder.label = (TextView) convertView.findViewById(R.id.label);

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:background="#374045"
     android:weightSum="9">
 
@@ -22,14 +22,6 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:text="BUTTON"
-            android:onClick="buttonClick" />
 
     </RelativeLayout>
 

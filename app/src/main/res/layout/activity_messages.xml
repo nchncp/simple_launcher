@@ -2,65 +2,81 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     android:background="#374045"
-    android:weightSum="9">
+    android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/galleryBox"
+        android:id="@+id/messagesBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_margin="20dp"
         android:gravity="center"
         android:text="@string/smsbox"
-        android:layout_alignParentStart="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="bold"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:layout_below="@+id/galleryBox"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="200dp"
-        android:layout_marginRight="200dp"
+        android:layout_below="@+id/messagesBox"
         android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:weightSum="2"
-        android:orientation="vertical">
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:weightSum="2">
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1" />
 
             <FrameLayout
                 android:id="@+id/unreadShortcut"
-                android:onClick="showUnreadMessages"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/unread"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:onClick="showUnreadMessages" />
 
             <FrameLayout
                 android:id="@+id/readShortcut"
-                android:onClick="showReadMessages"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/read"
+                android:onClick="showReadMessages" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:layout_weight="1" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" />
 
     </LinearLayout>
 
