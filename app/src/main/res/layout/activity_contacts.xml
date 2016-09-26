@@ -16,7 +16,7 @@
         android:layout_marginLeft="20dp"
         android:text="@string/contactBox"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="40dp" />
+        android:textSize="40sp" />
 
 
     <TableLayout

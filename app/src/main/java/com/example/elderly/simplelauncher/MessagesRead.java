@@ -62,7 +62,7 @@ public class MessagesRead extends Activity {
             @Override
             public void onResponse(Call<List<MessagesModel>> call, Response<List<MessagesModel>> response) {
                 ArrayList<String> exData = new ArrayList<String>();
-                for(MessagesModel obj: response.body()) {
+                for (MessagesModel obj : response.body()) {
                     exData.add(obj.getTopic());
                 }
                 ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MessagesRead.this, android.R.layout.simple_list_item_1, android.R.id.text1, exData);

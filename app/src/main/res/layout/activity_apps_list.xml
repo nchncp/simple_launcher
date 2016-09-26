@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    
-    <ListView
-        android:id="@+id/apps_list"
+    android:layout_height="match_parent"
+    android:background="#374045"
+    android:orientation="vertical"
+    android:weightSum="9">
+
+    <TextView
+        android:id="@+id/appsBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/apps"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="40sp" />
+
+
+    <TableLayout
+        android:id="@+id/appsTable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         > </ListView>
+        android:layout_below="@+id/appsBox"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="#ededed">
 
-</LinearLayout>
+        <View
+            android:layout_height="1dip"
+            android:background="#CCCCCC" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:orientation="horizontal">
+
+            <GridView
+                android:id="@+id/apps_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnWidth="120dp"
+                android:gravity="center"
+                android:horizontalSpacing="4dp"
+                android:numColumns="auto_fit"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="4dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_height="1dip"
+            android:background="#CCCCCC" />
+
+    </TableLayout>
+
+
+</RelativeLayout>

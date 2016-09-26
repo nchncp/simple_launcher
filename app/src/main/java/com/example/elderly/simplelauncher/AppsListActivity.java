@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,7 +26,7 @@ public class AppsListActivity extends Activity {
     private PackageManager manager;
     /** Store list of apps. */
     private List<AppInfo> apps;
-    private ListView list;
+    private GridView list;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
@@ -48,20 +49,19 @@ public class AppsListActivity extends Activity {
     }
 
     private void loadListView() {
-        list = (ListView) findViewById(R.id.apps_list);
+        list = (GridView) findViewById(R.id.apps_list);
 
-        ArrayAdapter<AppInfo> adapter = new ArrayAdapter<AppInfo>(this, R.layout.applist_item, apps) {
+        ArrayAdapter<AppInfo> adapter = new ArrayAdapter<AppInfo>(this, R.layout.apps_list, apps) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
 
                 ViewHolderItem viewHolder = null;
 
                 if (convertView == null) {
-                    convertView = getLayoutInflater().inflate(R.layout.applist_item, parent, false);
+                    convertView = getLayoutInflater().inflate(R.layout.apps_list, parent, false);
                     viewHolder = new ViewHolderItem();
                     viewHolder.icon = (ImageView) convertView.findViewById(R.id.icon);
                     viewHolder.label = (TextView) convertView.findViewById(R.id.label);
-                    viewHolder.name = (TextView) convertView.findViewById(R.id.name);
 
                     convertView.setTag(viewHolder);
                 } else {
@@ -73,7 +73,6 @@ public class AppsListActivity extends Activity {
                 if (appsInfo != null) {
                     viewHolder.icon.setImageDrawable(appsInfo.icon);
                     viewHolder.label.setText(appsInfo.label);
-                    viewHolder.name.setText(appsInfo.name);
                 }
 
                 return convertView;
@@ -82,7 +81,6 @@ public class AppsListActivity extends Activity {
             final class ViewHolderItem {
                 ImageView icon;
                 TextView label;
-                TextView name;
             }
         };
 

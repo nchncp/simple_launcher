@@ -66,7 +66,6 @@ public class MessagesUnread extends Activity {
                 for(MessagesModel obj: response.body()) {
                     exData.add(obj.getTopic());
                 }
-                Log.d("string", response.body().toString());
                 ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MessagesUnread.this, android.R.layout.simple_list_item_1, android.R.id.text1, exData);
                 jsonListview.setAdapter(myAdapter);
             }
