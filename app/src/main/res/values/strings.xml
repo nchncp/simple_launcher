@@ -20,4 +20,5 @@
     <string name="lname">Lastname</string>
     <string name="popup">Popup</string>
     <string name="contactBox">CONTACTS</string>
+    <string name="livechannels">SELECT CHANNEL</string>
 </resources>

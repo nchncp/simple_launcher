@@ -105,7 +105,7 @@
                     android:weightSum="1"
                     android:layout_marginRight="5dp">
 
-                    <FrameLayout
+                    <ImageButton
                         android:id="@+id/tvShortcut"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -123,7 +123,7 @@
                     android:orientation="horizontal"
                     android:layout_marginLeft="5dp">
 
-                    <FrameLayout
+                    <ImageButton
                         android:id="@+id/messagesShortcut"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -132,7 +132,7 @@
                         android:onClick="showMessages"
                         android:layout_marginRight="5dp" />
 
-                    <FrameLayout
+                    <ImageButton
                         android:id="@+id/galleryShortcut"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -153,7 +153,7 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp">
 
-                <FrameLayout
+                <ImageButton
                     android:id="@+id/contactShortcut"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -162,7 +162,7 @@
                     android:layout_marginRight="5dp"
                     android:onClick="showContacts"/>
 
-                <FrameLayout
+                <ImageButton
                     android:id="@+id/calendarShortcut"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -172,7 +172,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"/>
 
-                <FrameLayout
+                <ImageButton
                     android:id="@+id/notiShortcut"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -181,7 +181,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"/>
 
-                <FrameLayout
+                <ImageButton
                     android:id="@+id/settingsShortcut"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

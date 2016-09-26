@@ -192,7 +192,7 @@ public class HomeActivity extends Activity {
     }
 
     public void showTV(View v) {
-        Intent i = new Intent(this, LiveActivity.class);
+        Intent i = new Intent(this, LiveChannelsActivity.class);
         startActivity(i);
     }
 
