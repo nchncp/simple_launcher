@@ -47,7 +47,7 @@ public class ContactBookAdapter extends BaseAdapter {
 
         if(arg1 == null) {
             LayoutInflater inflater = LayoutInflater.from(mContext);
-            arg1 = inflater.inflate(R.layout.contacts_list, null);
+            arg1 = inflater.inflate(R.layout.contacts_item, null);
         }
 
         ImageView ivAvatar = (ImageView)arg1.findViewById(R.id.imgAvatar);

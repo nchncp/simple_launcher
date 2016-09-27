@@ -17,9 +17,9 @@ public class GalleryActivity extends Activity {
 
     }
 
-//    public void showPhotos(View v) {
-//        Intent i = new Intent(this, GalleryPhoto.class);
-//        startActivity(i);
-//    }
+    public void showPhotos(View v) {
+        Intent i = new Intent(this, GalleryPhoto.class);
+        startActivity(i);
+    }
 
 }

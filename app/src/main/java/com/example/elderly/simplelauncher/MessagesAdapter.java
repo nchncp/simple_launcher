@@ -8,17 +8,16 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by nicha on 9/27/16.
  */
-public class MessageAdapter extends BaseAdapter {
+public class MessagesAdapter extends BaseAdapter {
 
     private Context mContext;
     private ArrayList<MessagesModel> mArrayListMessage;
 
-    public MessageAdapter(Context context, ArrayList<MessagesModel> arrayList){
+    public MessagesAdapter(Context context, ArrayList<MessagesModel> arrayList){
         mContext = context;
         mArrayListMessage = arrayList;
     }
@@ -44,7 +43,7 @@ public class MessageAdapter extends BaseAdapter {
 
         if(convertView == null){
             LayoutInflater inflater = LayoutInflater.from(mContext);
-            convertView = inflater.inflate(R.layout.messages_list, null);
+            convertView = inflater.inflate(R.layout.messages_item, null);
         }
 
         TextView topic = (TextView)convertView.findViewById(R.id.topic);

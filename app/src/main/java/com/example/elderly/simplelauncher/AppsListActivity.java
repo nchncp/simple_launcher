@@ -11,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -51,14 +50,14 @@ public class AppsListActivity extends Activity {
     private void loadListView() {
         list = (GridView) findViewById(R.id.apps_list);
 
-        ArrayAdapter<AppInfo> adapter = new ArrayAdapter<AppInfo>(this, R.layout.apps_list, apps) {
+        ArrayAdapter<AppInfo> adapter = new ArrayAdapter<AppInfo>(this, R.layout.apps_item, apps) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
 
                 ViewHolderItem viewHolder = null;
 
                 if (convertView == null) {
-                    convertView = getLayoutInflater().inflate(R.layout.apps_list, parent, false);
+                    convertView = getLayoutInflater().inflate(R.layout.apps_item, parent, false);
                     viewHolder = new ViewHolderItem();
                     viewHolder.icon = (ImageView) convertView.findViewById(R.id.icon);
                     viewHolder.label = (TextView) convertView.findViewById(R.id.label);
