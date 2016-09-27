@@ -3,6 +3,7 @@ package com.example.elderly.simplelauncher;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.CalendarView;
+import android.widget.CalendarView.OnDateChangeListener;
 import android.widget.Toast;
 
 /**
@@ -17,7 +18,10 @@ public class CalendarActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
 
+        initializeCalendar();
+    }
 
+    private void initializeCalendar() {
         calendar = (CalendarView) findViewById(R.id.calendar);
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -25,5 +29,14 @@ public class CalendarActivity extends Activity{
                 Toast.makeText(getApplicationContext(), dayOfMonth + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
             }
         });
+
+        calendar.setShowWeekNumber(false);
+
+        calendar.setUnfocusedMonthDateColor(getResources().getColor(R.color.transparent));
+
+//        calendar.setWeekSeparatorLineColor(getResources().getColor(R.color.transparent));
+
+//        calendar.setSelectedWeekBackgroundColor(getResources().getColor(R.color.green));
+
     }
 }

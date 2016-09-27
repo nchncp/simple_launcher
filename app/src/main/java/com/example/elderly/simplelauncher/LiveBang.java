@@ -31,7 +31,7 @@ public class LiveBang extends Activity implements OnPreparedListener {
         super.onCreate(bundle);
         setContentView(R.layout.activity_live);
 
-        path = "http://123.30.185.126/hls/vtv3.m3u8";
+        path = "http://newtv.cdn.byteark.com/live/playlist_576p/index.m3u8";
         youtubePlayerView = (EMVideoView) findViewById(R.id.youtubePlayerView);
         youtubePlayerView.setOnPreparedListener(this);
         youtubePlayerView.setVideoURI(Uri.parse(path));
