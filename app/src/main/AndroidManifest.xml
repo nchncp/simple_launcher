@@ -76,9 +76,16 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
+        <activity android:name=".LiveBang"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
         <activity android:name=".GalleryPhoto"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+
 
 
     </application>

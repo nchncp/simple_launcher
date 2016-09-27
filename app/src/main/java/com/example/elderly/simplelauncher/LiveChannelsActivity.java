@@ -22,4 +22,9 @@ public class LiveChannelsActivity extends Activity {
         startActivity(i);
     }
 
+    public void showChannelBang(View v) {
+        Intent i = new Intent(this, LiveBang.class);
+        startActivity(i);
+    }
+
 }

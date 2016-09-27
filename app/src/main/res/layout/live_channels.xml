@@ -53,9 +53,10 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/channel_bang" />
+                android:background="@drawable/channel_bang"
+                android:onClick="showChannelBang"/>
 
-            <ImageButton
+            <FrameLayout
                 android:id="@+id/channel7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -64,7 +65,7 @@
                 android:layout_weight="1"
                 />
 
-            <ImageButton
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
