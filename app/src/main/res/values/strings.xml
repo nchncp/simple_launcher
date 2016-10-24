@@ -15,8 +15,8 @@
     <string name="login">LOGIN</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="fname">Name</string>
-    <string name="lname">Lastname</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
     <string name="popup">Popup</string>
     <string name="contactBox">CONTACTS</string>
     <string name="livechannels">SELECT CHANNEL</string>
@@ -29,4 +29,6 @@
     <string name="photoBox">PHOTO BOX</string>
     <string name="button_next">NEXT</string>
     <string name="button_previous">PREVIOUS</string>
+    <string name="save">SAVE</string>
+    <string name="register">Register</string>
 </resources>

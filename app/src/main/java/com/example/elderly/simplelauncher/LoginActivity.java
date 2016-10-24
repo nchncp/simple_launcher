@@ -151,4 +151,9 @@ public class LoginActivity extends Activity {
         }
         return str.toString();
     }
+
+    public void showRegister(View v) {
+        Intent i = new Intent(this, RegisterActivity.class);
+        startActivity(i);
+    }
 }
