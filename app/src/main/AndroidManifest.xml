@@ -77,7 +77,35 @@
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
-        <activity android:name=".LiveBang"
+        <activity
+            android:name=".LiveTV5"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name=".LiveThairath"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity
+            android:name=".LiveAmarin"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".LiveNow"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".LiveNew"
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name=".LiveBright"
             android:windowSoftInputMode="adjustPan"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />

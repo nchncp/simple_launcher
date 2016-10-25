@@ -47,23 +47,73 @@
                 android:onClick="showChannel3"/>
 
             <ImageButton
-                android:id="@+id/channelBang"
+                android:id="@+id/channel5"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/channel_bang"
-                android:onClick="showChannelBang"/>
+                android:background="@drawable/channel_5"
+                android:onClick="showChannel5"/>
 
-            <FrameLayout
-                android:id="@+id/channel7"
+            <ImageButton
+                android:id="@+id/channelThairath"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                />
+                android:background="@drawable/channel_thairath"
+                android:onClick="showChannelThairath"/>
+
+            <ImageButton
+                android:id="@+id/channelAmarin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/channel_amarin"
+                android:onClick="showChannelAmarin"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <ImageButton
+                android:id="@+id/channelNow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/channel_now"
+                android:onClick="showChannelNow"/>
+
+            <ImageButton
+                android:id="@+id/channelNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/channel_new"
+                android:onClick="showChannelNew"/>
+
+            <ImageButton
+                android:id="@+id/channelBright"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/channel_bright"
+                android:onClick="showChannelBright"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -72,13 +122,6 @@
                 android:layout_weight="1" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
-            android:orientation="horizontal" />
 
     </LinearLayout>
 

@@ -22,9 +22,33 @@ public class LiveChannelsActivity extends Activity {
         startActivity(i);
     }
 
-    public void showChannelBang(View v) {
-        Intent i = new Intent(this, LiveBang.class);
+    public void showChannel5(View v) {
+        Intent i = new Intent(this, LiveTV5.class);
         startActivity(i);
     }
 
+    public void showChannelThairath(View v) {
+        Intent i = new Intent(this, LiveThairath.class);
+        startActivity(i);
+    }
+
+    public void showChannelAmarin(View v) {
+        Intent i = new Intent(this, LiveAmarin.class);
+        startActivity(i);
+    }
+
+    public void showChannelNow(View v) {
+        Intent i = new Intent(this, LiveNow.class);
+        startActivity(i);
+    }
+
+    public void showChannelNew(View v) {
+        Intent i = new Intent(this, LiveNew.class);
+        startActivity(i);
+    }
+
+    public void showChannelBright(View v) {
+        Intent i = new Intent(this, LiveBright.class);
+        startActivity(i);
+    }
 }
