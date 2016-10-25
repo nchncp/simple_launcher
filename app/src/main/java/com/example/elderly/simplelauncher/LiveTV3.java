@@ -15,7 +15,7 @@ import com.devbrackets.android.exomedia.ui.widget.EMVideoView;
 /**
  * Created by nicha on 9/26/16.
  */
-public class LiveActivity extends Activity implements OnPreparedListener {
+public class LiveTV3 extends Activity implements OnPreparedListener {
     private static boolean isRunning;
 
     EMVideoView youtubePlayerView;

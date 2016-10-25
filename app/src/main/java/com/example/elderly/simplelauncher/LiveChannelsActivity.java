@@ -18,7 +18,7 @@ public class LiveChannelsActivity extends Activity {
     }
 
     public void showChannel3(View v) {
-        Intent i = new Intent(this, LiveActivity.class);
+        Intent i = new Intent(this, LiveTV3.class);
         startActivity(i);
     }
 
